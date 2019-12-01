@@ -1,0 +1,19 @@
+section {
+  margin: 20px;
+}
+
+.new-shop-form {
+  padding-top: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.save-container {
+  width: 100%;
+}
+
+.inputs-container {
+  width: 100%;
+}

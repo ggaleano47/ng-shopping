@@ -1,2 +1,12 @@
-<!-- <app-detail-shop></app-detail-shop> -->
-<p>It works</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Shops</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-new-shop (saveShop)="createShop($event)"></app-new-shop>
+<app-shop-index
+  [shopDataSource]="shopDataSource"
+  (updateShop)="updateShop($event)"
+  (deleteShop)="deleteShop($event)"
+>
+</app-shop-index>

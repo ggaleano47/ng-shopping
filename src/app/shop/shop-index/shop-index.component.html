@@ -1,0 +1,42 @@
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="favorite">
+    <mat-header-cell
+      fxFlex="15%"
+      fxLayoutAlign="center center"
+      *matHeaderCellDef
+    ></mat-header-cell>
+    <mat-cell
+      fxFlex="15%"
+      fxLayoutAlign="center center"
+      *matCellDef="let element"
+    >
+      <a (click)="updateFavorite(element)"
+        ><mat-icon>{{ showIcon(element.favorite) }}</mat-icon></a
+      >
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <mat-header-cell fxFlex="30%" *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell fxFlex="30%" *matCellDef="let element">{{
+      element.name
+    }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="address">
+    <mat-header-cell fxFlex="40%" *matHeaderCellDef>Address</mat-header-cell>
+    <mat-cell fxFlex="40%" *matCellDef="let element">{{
+      element.address
+    }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <mat-header-cell fxFlex="15%" *matHeaderCellDef></mat-header-cell>
+    <mat-cell
+      fxFlex="15%"
+      fxLayoutAlign="center center"
+      *matCellDef="let element"
+    >
+      <a (click)="delete(element)"><mat-icon>delete_outline</mat-icon></a>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
